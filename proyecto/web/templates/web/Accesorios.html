@@ -1,0 +1,23 @@
+{% extends 'web/base.html'%}
+<br><br><br><br><br><br><br><br><br>
+{%block contenido%}
+{% load humanize %}
+
+<h1>Accesorios</h1>
+<div class="Accesorios">
+  {% for p in productos %}
+  <div class="card">
+      <div class="card-body">
+        <img src="{{ p.imagen.url }}">
+        <h3>Nombre: {{p.nombre | title}}</h3>
+        <h3>Marca: {{p.marca | title}}</h3>
+        <h3>Precio: $ {{ p.precio | intcomma}}</h3>
+        <h4>Descripcion: {{p.descripcion}}</h4>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+{%endblock%}

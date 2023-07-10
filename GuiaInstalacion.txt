@@ -1,0 +1,5 @@
+1.- abrir la carpeta en una terminal y colocar el comando
+"pip install -r requirements.txt"
+2.- luego dentro de la carpeta que contega el manage.py que es  /proyectoDriveNation/proyecto, ejecutar el siguiente comando 
+"python manage.py runserver" y la pagina funcionara correctamente :D
+3.- (no lo hicimos con github, esta todo en un drive :c )

@@ -1,0 +1,52 @@
+{% extends 'web/base.html'%}
+{% load static %}
+{%block contenido%}
+{% load humanize %}
+<br><br><br><br>
+<!-- <link rel="stylesheet" href="{% static 'css/detalle.css' %}"> -->
+<div class="tituloInfo">
+    <h1>Conoce mas del {{ auto.marca | capfirst }} {{ auto.modelo | capfirst}}</h1>
+</div>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for imagen in imagenes_auto %}
+      <div class="carousel-item active">
+        <img src="{{ imagen.imagen.url }}" class="d-block w-100" alt="...">
+      </div>
+      {% endfor %}
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+  
+<div class="detail-auto">
+
+    <title>Detalle del Auto</title>
+    
+    <h2>Marca: {{ auto.marca | capfirst}}</h2>
+    <h2>Modelo: {{ auto.modelo | capfirst}}</h2>
+    <h2>Cilindrada: {{ auto.cilindrada }}</h2>
+    <h2>Año: {{ auto.anno }}</h2>
+    <h2>Precio: $ {{ auto.precio | intcomma }}</h2>
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info"><a href="{% url 'Registro' %}">Contacatnos</a></button>
+    </div>
+    
+</div>
+
+
+
+
+
+{%endblock%}

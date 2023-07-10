@@ -1,0 +1,74 @@
+{% extends 'web/base.html'%}
+{% load static %}
+{%block contenido%}
+<h1>Autos En Ofertas</h1>
+<section class="container Ofertas">
+    <div class="card">
+        <div class="card-details">
+            <img src={% static 'img/Mercdes-benz.jpg' %} alt="">
+            <p class="text-title">Mercedes-Benz</p>
+            <p class="text-body">Here are the details of the card</p>
+        </div>
+        <a href=""><button class="btn btn-info">Ver</button></a>
+    </div>
+    <div class="card">
+        <div class="card-details">
+            <img src={% static 'img/oferta2.jpg' %} alt="">
+            <p class="text-title">Porsche</p>
+            <p class="text-body">Here are the details of the card</p>
+        </div>
+        <a href=""><button class="btn btn-info">Ver</button></a>
+    </div>
+    <div class="card">
+        <div class="card-details">
+            <img src={% static 'img/Alfa-romeo.jpg' %} alt="">
+            <p class="text-title">Alfa-romeo</p>
+            <p class="text-body">Here are the details of the card</p>
+        </div>
+        <a href=""><button class="btn btn-info">Ver</button></a>
+    </div>
+</section>
+<br><br><br><br>
+<div class="titulo">
+    <h1>Catalogo</h1>
+</div>
+<br><br><br><br>
+{% load humanize %}
+<section class="container-fluid Catalogo">
+  
+  
+  {% for a in entity %}
+  <div class="card">
+    <img src="{{ a.imagen.url }}" />
+    <div class="card-details">
+      <!-- {% if a.imagenes %}
+      <img src="{{ a.imagenes.first.imagen.url }}" />
+      {% endif %} -->
+      <h3>Marca: {{ a.marca | capfirst}}</h3>
+      <h3>Modelo: {{ a.modelo | capfirst}}</h3>
+      <h3>Año: {{ a.anno}}</h3>
+      <h3>Precio: $ {{ a.precio | intcomma}}</h3>
+      <hr>
+      <button onclick="abrirVentana({{ a.id }})" class="btn">Ver vehículo</button>
+      <br><br>
+      
+    </div>
+  </div>
+  {% endfor %}
+  <div class="scroll">
+    {% include 'web/paginator.html' %}
+  </div>
+  
+
+</section>
+<script>
+    function abrirVentana(autoId) {
+      // Construir la URL de detalle del auto usando el ID
+      var url = "/detalle-auto/" + autoId + "/";
+    
+      // Abrir una nueva ventana emergente con la URL especificada
+      window.location.href = url;
+    }
+</script>
+
+{%endblock%}

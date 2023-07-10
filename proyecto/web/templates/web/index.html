@@ -1,0 +1,138 @@
+{% extends 'web/base.html'%}
+{% load static %}
+
+{%block contenido%}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/swiftLArgue jpg.jpg' %}" class="d-block w-100" alt="swiftpro">
+     
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/jac (1).jpg' %}" class="d-block w-100" alt="camioneta-jac">
+      
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/renault (1) (1).jpg' %}" class="d-block w-100" alt="renault">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/poer-gwm (1) (1).jpg' %}" class="d-block w-100" alt="gwm-camioneta">
+      
+    </div>
+    <div class="carousel-item">
+      <img src="{% static '/img/haval (1).jpeg' %}" class="d-block w-100" alt="haval-suv">
+      
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/Changan (1).jpg' %}" class="d-block w-100" alt="changan-camion">
+      
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/mazda2sport.jpg' %}" class="d-block w-100" alt="mazda-auto">
+      
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+  
+
+
+    <section class="container-fluid contenedorServicios">
+      <section class="tituloOfrecemos"> <h2>Que ofrecemos</h2></section>
+      <section  id= "row" class="contenedor2">
+        <figure class="oferta1">
+          <img class="img-fluid" src={% static 'img/imagen ford.jpg' %} alt="Descripción de la imagen 1">
+          <figcaption><div class="centrado">Agenda la atención en el taller más cercano en tu zona</div></figcaption>
+          <!-- boton ver vehiculos -->
+          <a class="fancy" href="{% url 'Catalogo' %}">
+            <span class="top-key"></span>
+            <span class="text">Ver Vehiculos</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+        </figure>
+        
+        <figure class="oferta2">
+          <img class="img-fluid" src={% static 'img/imagen ford2.jpg' %} alt="Descripción de la imagen 2">
+          <figcaption><div class="centrado">Consigue las mejores marcas y modelos de vehiculos</div></figcaption>
+          <!-- boton agenda tu hora -->
+          <a class="fancy" href="{% url 'Registro' %}">
+            <span class="top-key"></span>
+            <span class="text">Agenda Tu Hora</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+        </figure>
+        
+        <figure class="oferta3">
+          <img class="img-fluid" src={% static 'img/accesorios.jpg' %} alt="Descripción de la imagen 3">
+          <figcaption><div class="centrado">Personaliza tus accesorios y consigue tus repuestos originales</div></figcaption>
+          <!-- boton accesorios -->
+          <a class="fancy" href="{% url 'Accesorios' %}">
+            <span class="top-key"></span>
+            <span class="text">Accesorios</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+          <!-- boton repuestos -->
+          <a class="fancy" href="{% url 'listar_productos' %}">
+            <span class="top-key"></span>
+            <span class="text">Repuestos</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+        </figure>
+      </section>
+
+    </section>
+     <section class="tituloPorquedebes"> <h1>¿Por qué debes escoger a DriveNation?</h1></section>
+
+    <section class="container-fluid contenedorPorqueDebes">
+      <div class="card">
+        <div class="card-info">
+          <img src="{% static 'img/servicioalcli.png' %}" alt="Descripción de la imagen 1">
+          <p class="title">Excelente Experiencia</p>
+          <p>En más de 7 décadas la experiencia de nuestros clientes ha sido lo principal de nuestra compañia</p>
+          
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-info">
+          <img src="{% static 'img/mapa.png' %}" alt="Descripción de la imagen 2">
+          <p class="title">Sucursales</p>
+          <p>Contamos con más de 100 sucursales en el país</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-info">
+          <img src="{% static 'img/rapido.png' %}" alt="Descripción de la imagen 3">
+          <p class="title">Rapidos</p>
+          <p>Puedes comprar sin la necesidad de salir de tu casa, con el formato de reserva online</p>
+        </div>
+      </div>
+  
+    </section>
+    
+    
+
+
+{%endblock%}
