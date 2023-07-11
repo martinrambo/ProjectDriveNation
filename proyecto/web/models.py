@@ -51,3 +51,4 @@ class Producto(models.Model):
     descripcion = models.TextField()
     fecha_creacion = models.DateTimeField(default=timezone.now)
 
+

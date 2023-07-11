@@ -202,3 +202,6 @@ def detalle_auto(request, auto_id):
     
     # Resto de la lógica para obtener los datos del auto y renderizar la plantilla de detalle del auto
     return render(request, 'web/detalle_auto.html', {'auto': auto, 'imagenes_auto': imagenes_auto})
+
+
+

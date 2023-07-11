@@ -1,14 +1,21 @@
 from django import forms
-from .models import Cliente, Producto, Auto, ImagenAuto
+from .models import Cliente, Producto, Auto
 from django.contrib.auth.forms import UserCreationForm
 from datetime import date
 
+
+
+
 class ContactoForm(forms.ModelForm):
+    fecha_nac = forms.DateField(initial=date(2003, 4, 22), widget=forms.TextInput(attrs={'class': 'datepicker'}))
+    
     # con meta para decile a que modelo esta relacionaod para que tome los campos
     class Meta:
         model = Cliente
         # si quiero que liste todo pongo
         fields = '__all__'
+        
+       
         # fields = ["nombre", "run", "celular","email"]
 
 class ProductoForm(forms.ModelForm):
